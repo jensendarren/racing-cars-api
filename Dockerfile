@@ -29,5 +29,8 @@ RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 3000
 
+# Make use of binstubs
+ENV PATH="./bin:$PATH"
+
 # Start the main process.
 CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
