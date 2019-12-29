@@ -16,10 +16,11 @@ ActiveRecord::Schema.define(version: 2019_12_28_055658) do
   enable_extension "plpgsql"
 
   create_table "cars", force: :cascade do |t|
-    t.string "car_slug"
+    t.string "car_slug", null: false
     t.integer "max_speed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["car_slug"], name: "index_cars_on_car_slug", unique: true
   end
 
 end
