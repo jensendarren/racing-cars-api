@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_28_055658) do
+ActiveRecord::Schema.define(version: 2019_12_30_112904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 2019_12_28_055658) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["car_slug"], name: "index_cars_on_car_slug", unique: true
+  end
+
+  create_table "tracks", force: :cascade do |t|
+    t.string "name"
+    t.string "surface_type"
+    t.string "time_zone", default: "UTC"
+    t.string "country"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
