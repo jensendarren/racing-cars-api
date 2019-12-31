@@ -15,11 +15,11 @@ module Calculators
       @track ? "#{calculate_max_speed_on_track}km/h" : 'track not found'
     end
 
+    private
+
     def calculate_max_speed_on_track
       @car.max_speed - (total_slowing_factor * @car.max_speed)
     end
-
-    private
 
     def total_slowing_factor
       @track.slowing_factor + time_frame_slowing_factor
