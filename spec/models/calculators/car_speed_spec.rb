@@ -45,6 +45,12 @@ describe Calculators::CarSpeed do
 
   describe '#time_frame_slowing_factor' do
     describe 'returns a slowing factor based on the time of day at the track' do
+      around(:each) do |example|
+        Time.use_zone track.time_zone do
+          example.run
+        end
+      end
+
       after do
         travel_back
       end
