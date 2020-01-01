@@ -2,11 +2,11 @@
 start:
 	docker-compose up
 
-# Starts up a rails console in the app container
+# Starts up a rails console in the api container
 rails_console:
 	docker exec -it api rails c
 
-# Starts up a guard console in the app container
+# Starts up a guard console in the api container
 guard_console:
 	docker exec -it api guard
 

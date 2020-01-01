@@ -1,6 +1,6 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :car do
-    car_slug 'lamborghini_aventador'
-    max_speed 365
+    car_slug { Faker::Name.name }
+    max_speed { rand(180..420) }
   end
 end
