@@ -6,6 +6,7 @@ module Api
       def show
         car_speed = Calculators::CarSpeed.new(@car, @track)
 
+        # TODO: Move to a JSON Serializer like Active Model Serializers
         render json: { data:
                         { car:
                           { id: @car.id,
